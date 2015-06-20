@@ -81,8 +81,8 @@ extract () {
 #Function for bash_prompt coloring
 function bash_prompt
 {
-local START="\[\e"
-local END="\e[m\]"
+local START="\[\033"
+local END="\[\033[m\]"
 local BLACK="[0;30m\]"
 local BLUE="[0;34m\]"
 local WHITE="[1;37m\]"
@@ -94,14 +94,7 @@ local GREEN="[0;32m\]"
 local CYAN="[0;36m\]"
 local GRAY="[0;37m\]"
 local RED="[0;31m\]"
-#local IS_SUDO=$(sudo -n uptime 2>&1|grep "load"|wc -l)
-#if [ ${IS_SUDO} -gt 0 ]
-#then
-#	PS1="${START}${RED}\u${END}${START}${PURPLE}@${END}${START}${BROWN}\h${END}${START}${PURPLE}:${END}${START}${GRAY}\W${END} $ " 
-#else
-	#PS1="${START}${GREEN}\u${END}${START}${PURPLE}@${END}${START}${BROWN}\h${END}${START}${PURPLE}:${END}${START}${GRAY}\W${END} $ "
-  PS1="${START}${GREEN}\u${END}${START}${PURPLE}@${END}${START}${BROWN}\H${END}${START}${PURPLE}:${END}${START}${BRIGHTGREEN} {\j} ${END}${START}${GRAY}\W${END} $ "
-#fi
+PS1="${START}${GREEN}\u${END}${START}${PURPLE}@${END}${START}${BROWN}\H${END}${START}${PURPLE}:${END}${START}${BRIGHTGREEN} {\j} ${END}${START}${GRAY}\W${END} $ "
 }
 bash_prompt
 
