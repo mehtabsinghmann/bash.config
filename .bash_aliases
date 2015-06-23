@@ -4,13 +4,9 @@ export LSCOLORS='--color=always'
 alias less='less -r'
 alias tree='tree -C'
 export GREP_OPTIONS='--color=auto'
-#alias grep="grep --color=auto"
 alias tb='(head -5;echo -e "\n\n\n";tail -5) <'
 alias lsdirs="ls -l | grep '^d'"
 alias clean="/bin/rm -rf $HOME/.__trash/*"
-alias scpath="defaults write com.apple.screencapture location $1"
-alias hide="defaults write com.apple.finder AppleShowAllFiles FALSE;killall Finder"
-alias unhide="defaults write com.apple.finder AppleShowAllFiles TRUE;killall Finder"
 
 # Sort files by Size
 alias sbs="ls -s | sort -n"
@@ -29,3 +25,12 @@ PROMPT_COMMAND='echo `dt` `pwd` $$ $USER "$(history 1)" >> $HOME/.bash_eternal_h
 
 #safe rm
 alias rm=safe_rm
+
+alias wd="cd ~/workspace"
+alias l="cat $HOME/.bash_eternal_history | grep $1"
+alias e="env | grep $1"
+alias svindiff="svin diff | colordiff | less -R"
+alias sup="svin up"
+# print each command before executing
+#set -o xtrace
+#set +o xtrace

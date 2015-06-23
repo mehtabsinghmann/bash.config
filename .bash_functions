@@ -11,27 +11,9 @@ else
 fi
 }
 
-#uploads the war into the remote node
-#function uw(){
- # SRC_FILE = ""
-  #if [[ $1 == /* ]];
-  #then
-   # SRC_FILE = $1
-  #else
-  #  SRC_FILE = pwd.$1
-  #fi
-  #echo "$SRC_FILE"
-#}
-
 #Unrar all the files in the pwd
 function unrax-all() {
 for i in $( ls *.rar ); do unrax "$i"; echo "$i"; done
-}
-
-#reminder function
-function remindme()
-{
-    sleep $1 && zenity --info --text "$2" &
 }
 
 #method for recoverable removal
@@ -78,7 +60,7 @@ extract () {
   fi
 }
 
-#Function for bash_prompt coloring
+#Function for bash_prompt coloring, custom PS1
 function bash_prompt
 {
 local START="\[\033"
@@ -98,5 +80,3 @@ PS1="${START}${GREEN}\u${END}${START}${PURPLE}@${END}${START}${BROWN}\H${END}${S
 }
 bash_prompt
 
-#PS1 custom
-#PS1="\u@\h:\w$ "

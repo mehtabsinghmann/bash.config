@@ -1,15 +1,12 @@
-# Appending to the path environment variable - mysql, macports 
-export PATH=/usr/local/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$PATH
+[ -f /etc/bashrc ] && source /etc/bashrc
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 
 # Complete sudo and man pages
 complete -cf sudo man
-export JAVA_HOME=$(/usr/libexec/java_home)
-#Load the bash_functions
-if [ -f ~/.bash_functions ]; then
-	. ~/.bash_functions
-fi
 
-#Load the bash_aliases
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
+#Load other bashes
+[ -f ~/.bash_functions ] && source ~/.bash_functions
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.bash_linkedin ] && source ~/.bash_linkedin
+[ -f ~/.bash_mac ] && source ~/.bash_mac
